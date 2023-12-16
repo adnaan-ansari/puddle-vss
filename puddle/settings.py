@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -83,11 +84,22 @@ WSGI_APPLICATION = 'puddle.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'hjz1FvMi9qcb',
+        'HOST': 'ep-withered-thunder-96867880-pooler.ap-southeast-1.postgres.vercel-storage.com',
+        'PORT': '5432',
     }
 }
 
+# POSTGRES_URL="postgres://default:hjz1FvMi9qcb@ep-withered-thunder-96867880-pooler.ap-southeast-1.postgres.vercel-storage.com:5432/verceldb"
+# POSTGRES_PRISMA_URL="postgres://default:hjz1FvMi9qcb@ep-withered-thunder-96867880-pooler.ap-southeast-1.postgres.vercel-storage.com:5432/verceldb?pgbouncer=true&connect_timeout=15"
+# POSTGRES_URL_NON_POOLING="postgres://default:hjz1FvMi9qcb@ep-withered-thunder-96867880.ap-southeast-1.postgres.vercel-storage.com:5432/verceldb"
+# POSTGRES_USER="default"
+# POSTGRES_HOST="ep-withered-thunder-96867880-pooler.ap-southeast-1.postgres.vercel-storage.com"
+# POSTGRES_PASSWORD="hjz1FvMi9qcb"
+# POSTGRES_DATABASE="verceldb"
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
